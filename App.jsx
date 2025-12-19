@@ -1,21 +1,31 @@
  import React, { useState } from "react";
 
-const ComponentA = () => <h1>Status is TRUE</h1>;
-const ComponentB = () => <h1>Status is FALSE</h1>;
+const ColorToggle = () => {
+  const [isRed, setIsRed] = useState(true);
 
-const StatusToggle = () => {
-  const [status, setStatus] = useState(false);
+  const toggleColor = () => {
+    setIsRed(!isRed);
+  };
 
-  const toggleStatus = () => {
-    setStatus(!status);
+  const divStyle = {
+    backgroundColor: isRed ? "red" : "blue",
+    width: "200px",
+    height: "100px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
+    marginBottom: "10px"
   };
 
   return (
     <div>
-      <button onClick={toggleStatus}>Toggle Status</button>
-      {status ? <ComponentA /> : <ComponentB />}
+      <div style={divStyle}>
+        The color is {isRed ? "Red" : "Blue"}
+      </div>
+      <button onClick={toggleColor}>Toggle Color</button>
     </div>
   );
 };
 
-export default StatusToggle;
+export default ColorToggle;
