@@ -7,7 +7,7 @@ const ColorToggle = () => {
     setIsRed(!isRed);
   };
 
-  const divStyle = {
+  const boxStyle = {
     backgroundColor: isRed ? "red" : "blue",
     width: "200px",
     height: "100px",
@@ -15,12 +15,12 @@ const ColorToggle = () => {
     alignItems: "center",
     justifyContent: "center",
     color: "white",
-    marginBottom: "10px"
+    margin: "10px 0"
   };
 
   return (
     <div>
-      <div style={divStyle}>
+      <div style={boxStyle}>
         The color is {isRed ? "Red" : "Blue"}
       </div>
       <button onClick={toggleColor}>Toggle Color</button>
